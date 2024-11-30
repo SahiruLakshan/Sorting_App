@@ -33,8 +33,7 @@ public class MergeSort {
             rightArray.add(data.get(middle + 1 + j));
         }
 
-        // Merge the temporary arrays
-        int i = 0, j = 0, k = left;
+        int i = 0, j = 0, k = left;  // Merge the temporary arrays
         while (i < leftSize && j < rightSize) {
             if (leftArray.get(i) <= rightArray.get(j)) {
                 data.set(k, leftArray.get(i));
@@ -46,15 +45,13 @@ public class MergeSort {
             k++;
         }
 
-        // Copy remaining elements of leftArray
-        while (i < leftSize) {
+        while (i < leftSize) {      // Copy remaining elements of leftArray
             data.set(k, leftArray.get(i));
             i++;
             k++;
         }
 
-        // Copy remaining elements of rightArray
-        while (j < rightSize) {
+        while (j < rightSize) {  // Copy remaining elements of rightArray
             data.set(k, rightArray.get(j));
             j++;
             k++;

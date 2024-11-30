@@ -121,8 +121,7 @@ public class SortingApp {
                     selectedFile = fileChooser.getSelectedFile();
                     fileNameLabel.setText(selectedFile.getName());
                     
-                    // Get and display numeric columns in the dropdown
-                    List<String> numericColumns = getNumericColumns(selectedFile);
+                    List<String> numericColumns = getNumericColumns(selectedFile);// Get and display numeric columns in the dropdown
                     columnDropdown.removeAllItems();
                     for (String column : numericColumns) {
                         columnDropdown.addItem(column);
@@ -217,8 +216,7 @@ public class SortingApp {
         jframe.setVisible(true);        // Set frame visibility
     }
 
-    // Method to get numeric columns from the CSV file
-    private static List<String> getNumericColumns(File file) {
+    private static List<String> getNumericColumns(File file) {               // Method to get numeric columns from the CSV file
         List<String> numericColumns = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String headerLine = br.readLine();
@@ -250,8 +248,7 @@ public class SortingApp {
         return numericColumns;
     }
 
-    // Method to retrieve data from selected column of the CSV file
-    private static ArrayList<Double> getColumnData(File file, String column) {
+    private static ArrayList<Double> getColumnData(File file, String column) {   // Method to retrieve data from selected column of the CSV file
         ArrayList<Double> data = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String headerLine = br.readLine();
@@ -283,8 +280,7 @@ public class SortingApp {
         return data;
     }
 
-    // Method to save sorted data to a CSV file
-    private static void saveSortedData(File file, ArrayList<Double> data, String columnName) {
+    private static void saveSortedData(File file, ArrayList<Double> data, String columnName) {   // Method to save sorted data to a CSV file
         try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
             writer.println(columnName); // Use the selected column name
             for (Double value : data) {

@@ -4,21 +4,18 @@ public class ShellSort {
 
     public void sort(ArrayList<Double> data) {
         int n = data.size();
-        
-        // Start with a big gap, then reduce the gap
-        for (int gap = n / 2; gap > 0; gap /= 2) {
-            // Perform a gapped insertion sort for this gap size
-            for (int i = gap; i < n; i++) {
+    
+        for (int gap = n / 2; gap > 0; gap /= 2) {// Start with a big gap, then reduce the gap
+            
+            for (int i = gap; i < n; i++) {   // Perform a gapped insertion sort for this gap size
                 Double temp = data.get(i);
                 int j;
                 
-                // Shift earlier gap-sorted elements up until the correct location for data[i] is found
-                for (j = i; j >= gap && data.get(j - gap) > temp; j -= gap) {
+                for (j = i; j >= gap && data.get(j - gap) > temp; j -= gap) {  // Shift earlier gap-sorted elements up until the correct location for data[i] is found
                     data.set(j, data.get(j - gap));
                 }
                 
-                // Put temp (the original data[i]) in its correct location
-                data.set(j, temp);
+                data.set(j, temp); // Put temp in its correct location
             }
         }
     }

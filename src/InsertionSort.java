@@ -7,8 +7,7 @@ public class InsertionSort {
             Double key = data.get(i);
             int j = i - 1;
 
-            // Move elements of data[0..i-1] that are greater than key to one position ahead of their current position
-            while (j >= 0 && data.get(j) > key) {
+            while (j >= 0 && data.get(j) > key) {    // Move elements of data[0..i-1] that are greater than key to one position ahead of their current position
                 data.set(j + 1, data.get(j));
                 j = j - 1;
             }
