@@ -5,20 +5,16 @@ public class HeapSort {
     public void sort(ArrayList<Double> data) {
         int n = data.size();
 
-        // Build max heap
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(data, n, i);
         }
 
-        // Extract elements from heap one by one
-        for (int i = n - 1; i > 0; i--) {
-            // Move current root to end
-            Double temp = data.get(0);
+        for (int i = n - 1; i > 0; i--) {        // Extract elements from heap one by one
+            Double temp = data.get(0);              // Move current root to end
             data.set(0, data.get(i));
             data.set(i, temp);
 
-            // Call max heapify on the reduced heap
-            heapify(data, i, 0);
+            heapify(data, i, 0); // Call max heapify on the reduced heap
         }
     }
 
@@ -28,24 +24,20 @@ public class HeapSort {
         int left = 2 * i + 1; // left child
         int right = 2 * i + 2; // right child
 
-        // If left child is larger than root
-        if (left < n && data.get(left) > data.get(largest)) {
+        if (left < n && data.get(left) > data.get(largest)) {  // If left child is larger than root
             largest = left;
         }
 
-        // If right child is larger than largest so far
-        if (right < n && data.get(right) > data.get(largest)) {
+        if (right < n && data.get(right) > data.get(largest)) {   // If right child is larger than largest so far
             largest = right;
         }
 
-        // If largest is not root
-        if (largest != i) {
+        if (largest != i) {          // If largest is not root
             Double swap = data.get(i);
             data.set(i, data.get(largest));
             data.set(largest, swap);
 
-            // Recursively heapify the affected subtree
-            heapify(data, n, largest);
+            heapify(data, n, largest);  // Recursively heapify the affected subtree
         }
     }
 }

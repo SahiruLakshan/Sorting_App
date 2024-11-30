@@ -25,8 +25,7 @@ public class MergeSort {
         ArrayList<Double> leftArray = new ArrayList<>(leftSize);
         ArrayList<Double> rightArray = new ArrayList<>(rightSize);
 
-        // Copy data into temporary arrays
-        for (int i = 0; i < leftSize; i++) {
+        for (int i = 0; i < leftSize; i++) {          // Copy data into temporary arrays
             leftArray.add(data.get(left + i));
         }
         for (int j = 0; j < rightSize; j++) {
