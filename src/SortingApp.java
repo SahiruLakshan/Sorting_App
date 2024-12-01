@@ -109,6 +109,8 @@ public class SortingApp {
         bestAlgorithmLabel.setBounds(280, 540, 180, 30);
         jframe.add(bestAlgorithmLabel);
 
+        jframe.setVisible(true);        // Set frame visibility
+
         // Action for choose file button
         chooseFileButton.addActionListener(new ActionListener() {   //Choose CSV File
             @Override
@@ -212,8 +214,6 @@ public class SortingApp {
             });
         }
 
-
-        jframe.setVisible(true);        // Set frame visibility
     }
 
     private static List<String> getNumericColumns(File file) {               // Method to get numeric columns from the CSV file
